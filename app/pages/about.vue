@@ -6,6 +6,6 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Portfolio - about'
+  title: 'about'
 })
 </script>

@@ -17,3 +17,9 @@
     <!-- fine main content -->
   </div>
 </template>
+
+<script setup>
+useHead({
+  titleTemplate: 'Portfolio - %s'
+})
+</script>
