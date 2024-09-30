@@ -3,3 +3,9 @@
     <h1>hello world!</h1>
   </div>
 </template>
+
+<script setup>
+useSeoMeta({
+  title: 'Portfolio - home'
+})
+</script>
