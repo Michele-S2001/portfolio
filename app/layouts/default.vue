@@ -5,13 +5,13 @@
     -->
     <header class="flex justify-between items-center my-5">
       <div>
-        <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200">Michele Serafini</NuxtLink>
+        <NuxtLink to="/" class="text-xl font-semibold hover:bg-gray-200">Michele Serafini</NuxtLink>
       </div>
       <Navbar />
     </header>
     <!-- fine header -->
     <!-- inizio main content -->
-    <main class="container">
+    <main>
       <slot></slot>
     </main>
     <!-- fine main content -->
