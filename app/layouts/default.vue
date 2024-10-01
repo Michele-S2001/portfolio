@@ -11,7 +11,7 @@
     </header>
     <!-- fine header -->
     <!-- inizio main content -->
-    <main>
+    <main class="mt-10">
       <slot></slot>
     </main>
     <!-- fine main content -->
