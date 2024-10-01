@@ -28,7 +28,4 @@ const { data, status, error } = await useFetch('https://api.github.com/users/mic
 const repoWithLang = computed(
   () => data.value.filter(repo => repo.language)
 )
-
-console.log(repoWithLang.value);
-
 </script>
