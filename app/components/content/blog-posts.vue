@@ -1,35 +1,47 @@
 <template>
-  <section class="not-prose font-mono">
-    <header class="column text-gray-500 text-sm select-none">
-      <span>date</span>
-      <span>title</span>
-    </header>
-    <ul>
-      <li v-for="post in posts" :key="post._path">
-        <NuxtLink :to="post._path" class="column hover:bg-gray-100 dark:hover:bg-gray-700">
-          <div :class="[post.dispayYear ? 'text-gray-400 dark:text-gray-500' : 'text-white dark:text-gray-900']">
-            {{ post.year }}
-          </div>
-          <p>{{ post.title }}</p>
-        </NuxtLink>
-      </li>
-    </ul>
-  </section>
+  <slot :posts="posts" :limit="limit">
+    <section class="not-prose font-mono">
+      <header class="column text-gray-500 text-sm select-none">
+        <span>date</span>
+        <span>title</span>
+      </header>
+      <ul>
+        <li v-for="post in posts" :key="post._path">
+          <NuxtLink :to="post._path" class="column hover:bg-gray-100 dark:hover:bg-gray-700">
+            <div :class="[post.dispayYear ? 'text-gray-400 dark:text-gray-500' : 'text-white dark:text-gray-900']">
+              {{ post.year }}
+            </div>
+            <p>{{ post.title }}</p>
+          </NuxtLink>
+        </li>
+      </ul>
+    </section>
+  </slot>
 </template>
 
 <script setup>
-useSeoMeta({
-  title: 'blog'
+const props = defineProps({
+  limit: {
+    type: Number,
+    default: null
+  }
 })
 
 const { data } = await useAsyncData(
   'blog-list', 
-  () => queryContent('/blog')
+  () => {
+    const query = queryContent('/blog')
     .where({ _path: {$ne: '/blog'} })
     .only(['_path', 'title', 'publishedAt'])
     .sort({ publishedAt: -1 })
-    .find()
-  );
+
+    if(props.limit) {
+      query.limit(props.limit)
+    }
+
+    return query.find();
+  } 
+);
 
 const posts = computed(() => {
   if(!data.value) {
