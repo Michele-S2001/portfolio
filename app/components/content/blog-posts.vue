@@ -50,9 +50,6 @@ const posts = computed(() => {
 
   return result;
 })
-
-console.log(posts.value);
-
 </script>
 
 <style scoped>
