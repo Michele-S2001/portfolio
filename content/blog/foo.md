@@ -1,4 +1,5 @@
 ---
+toc: true
 title: 'Second post on our website'
 publishedAt: 2023-03-2 10:15:00
 ---
