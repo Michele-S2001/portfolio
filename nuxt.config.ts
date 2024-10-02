@@ -25,5 +25,8 @@ export default defineNuxtConfig({
     options: {
       scrollBehaviorType: 'smooth',
     }
+  },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in'}
   }
 })
