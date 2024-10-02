@@ -1,7 +1,6 @@
 <template>
   <article class="prose dark:prose-invert prose-pre:bg-white dark:prose-pre:bg-gray-800 prose-pre:text-gray-700 prose-img:max-w-28 dark:prose-pre:text-gray-300 max-w-none">
     <ContentDoc v-slot="{ doc }">
-      {{ doc.body.toc.links }}
       <div class="grid grid-cols-6 gap-16">
         <div :class="[ doc.toc ? 'col-span-4' : 'col-span-full']">
           <ContentRenderer :value="doc" />
