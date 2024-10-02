@@ -1,7 +1,7 @@
 <template>
   <ul>
-    <li v-for="link in links" :key="link.id">
-      <NuxtLink :to="{ path: route.path, hash: `#${link.id}`}" :class="{ 'ml-4': level}">
+    <li class="text-sm font-semibold leading-7" v-for="link in links" :key="link.id">
+      <NuxtLink :to="{ path: route.path, hash: `#${link.id}`}" :class="{ 'ml-4': level}" class="hover:text-green-400">
         {{ link.text }}
       </NuxtLink>
       <TocLinks :links="link.children" :level="level + 1"/>
