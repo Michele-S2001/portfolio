@@ -6,7 +6,7 @@
     <header class="flex justify-between items-center my-5">
       <div class="flex items-center space-x-10">
         <div>
-          <NuxtLink to="/" class="text-xl font-semibold hover:bg-gray-200">Michele Serafini</NuxtLink>
+          <NuxtLink to="/" class="text-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-800">Michele Serafini</NuxtLink>
         </div>
         <Navbar />
       </div>
