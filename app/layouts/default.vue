@@ -1,11 +1,8 @@
 <template>
   <div class="container">
-    <!-- inizio header 
-      IDEE: possibilità di creare un componente apposta per l'header
-    -->
-    <header class="flex justify-between items-center my-5">
-      <div class="flex items-center space-x-10">
-        <div>
+    <header class="flex justify-between items-start md:items-center my-5">
+      <div class="flex items-center gap-10">
+        <div class="hidden md:block">
           <NuxtLink to="/" class="text-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-800">Michele Serafini</NuxtLink>
         </div>
         <Navbar />

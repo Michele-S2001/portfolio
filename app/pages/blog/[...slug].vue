@@ -3,10 +3,10 @@
     <ContentDoc>
       <template v-slot="{ doc }">
         <div class="grid grid-cols-6 gap-16">
-          <div :class="[ doc.toc ? 'col-span-4' : 'col-span-full']">
+          <div :class="[ doc.toc ? 'col-span-6 md:col-span-4' : 'col-span-full']">
             <ContentRenderer :value="doc" />
           </div>
-          <div class="col-span-2" v-if="doc.toc">
+          <div class="hidden md:col-span-2 md:block" v-if="doc.toc">
             <aside class="sticky top-8">
               <h4>Table of contents</h4>
               <nav class="not-prose">
