@@ -25,7 +25,7 @@ useSeoMeta({
 const { data } = await useAsyncData(
   'blog-list', 
   () => queryContent('/blog')
-    .where({ '_path': {$ne: '/blog'}})
+    .where({ _path: {$ne: '/blog'} })
     .only(['_path', 'title', 'publishedAt'])
     .sort({ publishedAt: -1 })
     .find()
