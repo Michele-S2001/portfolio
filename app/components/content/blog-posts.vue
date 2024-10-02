@@ -7,7 +7,9 @@
     <ul>
       <li v-for="post in posts" :key="post._path">
         <NuxtLink :to="post._path" class="column hover:bg-gray-100 dark:hover:bg-gray-700">
-          <div class="text-gray-600 dark:text-gray-500">2023</div>
+          <div :class="[post.dispayYear ? 'text-gray-400 dark:text-gray-500' : 'text-white dark:text-gray-900']">
+            {{ post.year }}
+          </div>
           <p>{{ post.title }}</p>
         </NuxtLink>
       </li>
@@ -20,13 +22,37 @@ useSeoMeta({
   title: 'blog'
 })
 
-const { data:posts } = await useAsyncData(
+const { data } = await useAsyncData(
   'blog-list', 
   () => queryContent('/blog')
-    .only(['_path', 'title'])
     .where({ '_path': {$ne: '/blog'}})
+    .only(['_path', 'title', 'publishedAt'])
+    .sort({ publishedAt: -1 })
     .find()
-);
+  );
+
+const posts = computed(() => {
+  if(!data.value) {
+    return [];
+  }
+
+  const result = [];
+  let lastYear = null;
+
+  for(const post of data.value) {
+    const year = new Date(post.publishedAt).getFullYear();
+    const dispayYear = year !== lastYear;
+    post.dispayYear = dispayYear;
+    post.year = year;
+    result.push(post);
+    lastYear = year;
+  }
+
+  return result;
+})
+
+console.log(posts.value);
+
 </script>
 
 <style scoped>

@@ -1,5 +1,6 @@
 ---
 title: 'First post on our website'
+publishedAt: 2022-10-1 23:23:00
 ---
 # First post on our website
 ## Introduction 
