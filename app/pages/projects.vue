@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <h1 class="text-2xl font-semibold mb-10">Projects</h1>
-    <ProjectList />
+  <div class="prose dark:prose-invert">
+    <ContentDoc path="/projects" />
   </div>
 </template>
-
-<script setup>
-useSeoMeta({
-  title: 'projects'
-})
-</script>
