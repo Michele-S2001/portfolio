@@ -1,11 +1,5 @@
 <template>
-  <div>
-    <h1>hello world!</h1>
+  <div class="prose dark:prose-invert max-w-none">
+    <ContentDoc path="/" />
   </div>
 </template>
-
-<script setup>
-useSeoMeta({
-  title: 'home'
-})
-</script>
