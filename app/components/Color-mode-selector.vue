@@ -2,7 +2,7 @@
   <div class="flex space-x-2 items-center">
     <p v-if="showNextModeLabel" class="text-gray-500 dark:text-gray-300 text-xs">Change to {{ nextMode }}</p>
     <button @click="toggleMode" @mouseenter="showNextModeLabel = true" @mouseleave="showNextModeLabel = false"
-      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 to-gray-500 text-4xl md:text-base">
+      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 to-gray-500 text-2xl md:text-base">
       {{ nextModeIcon }}
     </button>
   </div>
