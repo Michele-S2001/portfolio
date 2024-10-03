@@ -16,4 +16,4 @@ Il progetto copre i seguenti argomenti chiave:
 
 ## Deploy su Vercel
 
-[Clicca qui per visitarlo](https://portfolio-ipfu.vercel.app/projects)
+[Clicca qui per visitarlo](https://portfolio-ipfu.vercel.app)
