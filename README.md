@@ -13,3 +13,7 @@ Il progetto copre i seguenti argomenti chiave:
 - **Dark Mode** implementata con Tailwind CSS e il modulo `color-mode` di Nuxt.
 - **Nuxt Content** per gestire contenuti Markdown con funzionalità avanzate.
 - **Sitemap** generata automaticamente per l'hosting statico.
+
+## Deploy su Vercel
+
+[Clicca qui per visitarlo](https://portfolio-ipfu.vercel.app/projects)
