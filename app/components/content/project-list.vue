@@ -20,12 +20,13 @@
 </template>
 
 <script setup>
-// IDEE: creare un filtro in base al linguaggio principale
 const { data, status, error } = await useFetch('https://api.github.com/users/michele-s2001/repos', {
   query: {sort: 'updated'}
 });
 
-const repoWithLang = computed(
-  () => data.value.filter(repo => repo.language)
-)
+const repoWithLang = computed(() => {
+  if(data.value) {
+    return data.value.filter(repo => repo.language)
+  }
+})
 </script>
